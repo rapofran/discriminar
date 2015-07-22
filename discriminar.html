@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Aprenda a discriminar junto al proyecto de Ley Antidiscriminación</title>
+</head>
+<script>
+function genero(sexo, str){
+if (sexo == 0){
+salida = str.replace ("X", "o");
+salida = salida.replace ("Y", "e");
+salida = salida.replace ("Z", "");
+}else{
+salida = str.replace ("X", "a");
+salida = salida.replace ("Y", "a");
+salida = salida.replace ("Z", "a");
+}
+return salida;
+}
+
+function vectaleat(vect){
+return vect[Math.floor(Math.random() * vect.length)]
+}
+
+var disc = ["discrimino", "excluyo", "molesto", "agredo", "ofendo", "insulto"];
+var calificativo = ["molesto", "desagradable", "asqueroso", "feo"];
+var exceso = ["como si fuera poco", "para colmo", "encima", "además", "lo peor es que", "seguro es porque "];
+var sexo = ["hombre", "mujer"];
+var pais = ["argentinX", "estadounidense", "iraquí", "japonesZ", "inglesZ", "chilenX", "paraguayX", "uruguayX", "guatemaltecX"];
+var lengua = ["español", "ingles", "frances", "chino", "italiano", "guarní", "hebreo", "alemán", "checo", "ruso"];
+var religion = ["católicX", "judiX", "musualmanZ", "ateX", "agnósticX"];
+var estadocivil = ["soletrX", "casadX", "divorciadX", "separadX", "viudX"];
+var colorpiel = ["blancX", "morenX", "negrX", "amarillX"];
+var politica = ["izquierda", "derecha", "centro"];
+var trabajo = ["carpinterX", "contadorX", "abogadX", "porterX"];
+var econ = ["ricX", "pobre"];
+
+
+
+texto ="";
+texto ="";
+for (i=0;i<5; i++){
+sexo_ = Math.floor(Math.random() * sexo.length);
+texto += "- A "+ genero(sexo_, "estY") + " " + genero(sexo_, "lX") +" "+ vectaleat(disc) +" por ser " + sexo[sexo_] + " y ser " + genero(sexo_,vectaleat(pais)) + ". Pero lo más " + vectaleat(calificativo) + " es que habla " + vectaleat(lengua) + ", "+ vectaleat(exceso) +" es " + genero(sexo_, vectaleat(religion)) + " y es de " + vectaleat(politica) + ". <br>";
+}
+document.write(texto);
+</script>
+
+<br />
+<br />
+<br />
+<i>Frase generada aleatoriamente según los lineamientos del proyecto de Ley Nacional Contra la Discriminación</i>
+</html>
